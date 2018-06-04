@@ -10,13 +10,13 @@ class MainActivity : AppCompatActivity() {
 
     private val animationLoop: TimeAnimator = TimeAnimator()
 
-    lateinit var pv: ProgressView
+     var pv: ProgressView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         pv = findViewById(R.id.progressView)
-        startAnimationLoop()
+//        startAnimationLoop()
     }
 
     override fun onPause() {
