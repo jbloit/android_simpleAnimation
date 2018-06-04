@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         pv = findViewById<ProgressView>(R.id.progressView)
+        pv?.setBackgroundColor(resources.getColor(R.color.jblack))
         startAnimationLoop()
     }
 
@@ -24,7 +25,6 @@ class MainActivity : AppCompatActivity() {
         super.onPause()
         stopAnimationLoop()
     }
-
 
     fun startAnimationLoop(){
         animationLoop.setTimeListener(TimeAnimator.TimeListener({ animation, totalTime, deltaTime ->  performAnimation()}))

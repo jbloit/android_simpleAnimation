@@ -16,7 +16,7 @@ class ProgressView(context: Context, attrs: AttributeSet) : View(context, attrs)
     private var progressLine = Line(Color.RED, 30.toFloat())
     private var progress = 0.toFloat()
 
-    private var width = 200.toFloat()
+    private var width = 0.toFloat()
 
     fun setProgress(progress: Float){
         progressLine.moveTo(0.toFloat(), 0.toFloat())
@@ -26,6 +26,7 @@ class ProgressView(context: Context, attrs: AttributeSet) : View(context, attrs)
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
+        width = canvas.width.toFloat()
         canvas.drawPath(progressLine.path, progressLine.paint)
     }
 
