@@ -13,7 +13,7 @@
 
     <view
         class="net.onoffon.androidsimpleanimation.ProgressView"
-        id="@+id/progressView"
+        android:id="@+id/progressView"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginBottom="8dp"

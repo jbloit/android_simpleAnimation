@@ -9,14 +9,15 @@ import android.widget.TextView
 class MainActivity : AppCompatActivity() {
 
     private val animationLoop: TimeAnimator = TimeAnimator()
+    private var progress = 0.toFloat()
 
      var pv: ProgressView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        pv = findViewById(R.id.progressView)
-//        startAnimationLoop()
+        pv = findViewById<ProgressView>(R.id.progressView)
+        startAnimationLoop()
     }
 
     override fun onPause() {
@@ -37,8 +38,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun performAnimation(){
-        val tv = findViewById<TextView>(R.id.textView)
+        progress += 0.01.toFloat()
+        if (progress > 1) {progress = 0.toFloat()}
 
+        pv?.setProgress(progress)
     }
 
 }
